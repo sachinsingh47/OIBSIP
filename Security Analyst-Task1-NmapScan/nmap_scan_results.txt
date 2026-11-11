@@ -1,1 +1,69 @@
+                       Find Taget Device ip
+Command : nmap -sn gatway.ip/24 
+Output : 
+nmap -sn 192.168.29.1/24
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-11 09:07 +0530
+Nmap scan report for reliance.reliance (192.168.29.1)
+Host is up (0.0032s latency).
+MAC Address: 04:70:56:E5:29:AD (Arcadyan)
+Nmap scan report for 192.168.29.15
+Host is up (0.099s latency).
+MAC Address: 32:FE:58:B8:09:AF (Unknown)
+Nmap scan report for 192.168.29.184
+Host is up (0.19s latency).
+MAC Address: 1C:02:19:3F:A1:F1 (Guangdong Oppo Mobile Telecommunications)
+Nmap scan report for 192.168.29.244
+Host is up (0.19s latency).
+MAC Address: 48:5F:99:4B:A9:13 (Cloud Network Technology (Samoa) Limited)
+Nmap scan report for 192.168.29.48
+Host is up.
+Nmap done: 256 IP addresses (5 hosts up) scanned in 3.24 seconds
+
+                                                 Basic Scan 
+
+Command : nmap 192.168.29.48
+Output :
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-11 09:18 +0530
+Stats: 0:02:30 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 74.50% done; ETC: 09:21 (0:00:51 remaining)
+Stats: 0:02:31 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 75.00% done; ETC: 09:21 (0:00:50 remaining)
+Nmap scan report for 192.168.29.48
+Host is up.
+All 1000 scanned ports on 192.168.29.48 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Nmap done: 1 IP address (1 host up) scanned in 201.83 seconds
+
+                             Service version Scan 
+Command : nmap -sV target ip 
+Output : 
+nmap -sV 192.168.29.48
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-11 09:24 +0530
+Nmap scan report for 192.168.29.48
+Host is up.
+All 1000 scanned ports on 192.168.29.48 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 201.99 seconds
+
+                             OS Detection Scan 
+Command : sudo nmap -O 192.168.29.48
+Output : 
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-11 09:31 +0530
+Stats: 0:03:05 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 92.00% done; ETC: 09:34 (0:00:16 remaining)
+Nmap scan report for 192.168.29.48
+Host is up (0.000067s latency).
+All 1000 scanned ports on 192.168.29.48 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+                              Comman ports and Security Analysis 
+
+Port Number	Protocol	Service Name	What the Service Does	Security Risk & Analysis
+22	TCP	SSH (Secure Shell)	Used for secure remote command-line login, file transfers (SCP/SFTP), and administrative access to servers.	Low Risk if secured with strong passwords or SSH key-based authentication; High Risk if default credentials or outdated versions allow brute-force attacks.
+80	TCP	HTTP	Serves unencrypted web pages over the web from servers like Apache or Nginx.	Medium Risk because data (including login credentials) travels in plain text, making it vulnerable to packet sniffing.
+443	TCP	HTTPS	Serves secure, encrypted web pages using SSL/TLS protocols.	Low Risk compared to HTTP because traffic is encrypted, but misconfigured certificates or vulnerable web applications can still pose risks.
 
